@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saveurs du Cameroun - APHRIC EXPRESS Marketplace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="restaurant-aphric.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo-wrapper">
+                    <div class="logo-icon">🚚</div>
+                    <div class="logo-text">
+                        <span class="logo-main">APHRIC</span>
+                        <span class="logo-sub">EXPRESS</span>
+                    </div>
+                </div>
+                <div class="breadcrumb">
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-item">Marketplace</span>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">Saveurs du Cameroun</span>
+                </div>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#menu" class="nav-link active">Menu</a></li>
+                <li><a href="#about" class="nav-link">À Propos</a></li>
+                <li><a href="#delivery" class="nav-link">Livraison</a></li>
+                <li><a href="#reviews" class="nav-link">Avis</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="btn-secondary" onclick="openCart()">
+                    <span class="btn-icon">🛒</span>
+                    <span class="cart-count" id="navCartCount">0</span>
+                </button>
+                <button class="btn-primary" onclick="scrollToMenu()">
+                    <span class="btn-icon">⚡</span>
+                    Commander
+                </button>
+                <button class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-background">
+            <div class="hero-grid"></div>
+            <div class="hero-gradient"></div>
+        </div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Restaurant vérifié • Livraison 30min</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    Saveurs du <span class="highlight">Cameroun</span>
+                    <br>cuisine <span class="highlight-alt">authentique</span>
+                </h1>
+                
+                <p class="hero-description">
+                    Plats traditionnels camerounais préparés avec passion. Du Ndolé au Poulet DG, 
+                    découvrez l'excellence culinaire livrée en 30 minutes via Aphric Express.
+                    Note: 4.8★ • 2,847+ commandes • Douala, Cameroun
+                </p>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">4.8★</div>
+                        <div class="stat-label">Note clients</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2,847</div>
+                        <div class="stat-label">Commandes</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30min</div>
+                        <div class="stat-label">Livraison</div>
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <button class="btn-hero-primary" onclick="scrollToMenu()">
+                        <span>Explorer le Menu</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <button class="btn-hero-secondary" onclick="showInfo()">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/>
+                            <path d="M10 10v4m0-8v.01" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span>Infos restaurant</span>
+                    </button>
+                </div>
+
+                <div class="restaurant-badges">
+                    <span class="badge-item">✓ Vendeur vérifié</span>
+                    <span class="badge-item">🔒 Paiement sécurisé</span>
+                    <span class="badge-item">⚡ Livraison express</span>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="restaurant-preview">
+                            <div class="preview-header">
+                                <div class="restaurant-info-small">
+                                    <div class="restaurant-logo">🍽️</div>
+                                    <div class="restaurant-details-small">
+                                        <h3>Saveurs du Cameroun</h3>
+                                        <p>Cuisine traditionnelle</p>
+                                    </div>
+                                </div>
+                                <div class="restaurant-status">
+                                    <span class="status-dot"></span>
+                                    <span>Ouvert</span>
+                                </div>
+                            </div>
+                            <div class="preview-menu-list">
+                                <div class="menu-preview-item">
+                                    <div class="menu-preview-image">🍲</div>
+                                    <div class="menu-preview-info">
+                                        <h4>Ndolé Traditionnel</h4>
+                                        <p>3,500 FCFA</p>
+                                    </div>
+                                </div>
+                                <div class="menu-preview-item">
+                                    <div class="menu-preview-image">🍗</div>
+                                    <div class="menu-preview-info">
+                                        <h4>Poulet DG</h4>
+                                        <p>4,000 FCFA</p>
+                                    </div>
+                                </div>
+                                <div class="menu-preview-item">
+                                    <div class="menu-preview-image">🥘</div>
+                                    <div class="menu-preview-info">
+                                        <h4>Eru Sauce</h4>
+                                        <p>3,800 FCFA</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-card card-1">
+                    <div class="card-icon">⭐</div>
+                    <div class="card-content">
+                        <div class="card-title">4.8 Rating</div>
+                        <div class="card-subtitle">2,847 avis</div>
+                    </div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon">🚀</div>
+                    <div class="card-content">
+                        <div class="card-title">30 min</div>
+                        <div class="card-subtitle">Livraison</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories-section">
+        <div class="container">
+            <div class="categories-scroll">
+                <button class="category-card active" data-category="all" onclick="filterMenu('all')">
+                    <div class="category-icon">🍽️</div>
+                    <div class="category-name">Tous</div>
+                    <div class="category-count" id="count-all">12</div>
+                </button>
+                <button class="category-card" data-category="plats" onclick="filterMenu('plats')">
+                    <div class="category-icon">🍲</div>
+                    <div class="category-name">Plats</div>
+                    <div class="category-count" id="count-plats">3</div>
+                </button>
+                <button class="category-card" data-category="grillades" onclick="filterMenu('grillades')">
+                    <div class="category-icon">🍖</div>
+                    <div class="category-name">Grillades</div>
+                    <div class="category-count" id="count-grillades">2</div>
+                </button>
+                <button class="category-card" data-category="special" onclick="filterMenu('special')">
+                    <div class="category-icon">⭐</div>
+                    <div class="category-name">Spécialités</div>
+                    <div class="category-count" id="count-special">3</div>
+                </button>
+                <button class="category-card" data-category="boissons" onclick="filterMenu('boissons')">
+                    <div class="category-icon">🥤</div>
+                    <div class="category-name">Boissons</div>
+                    <div class="category-count" id="count-boissons">2</div>
+                </button>
+                <button class="category-card" data-category="desserts" onclick="filterMenu('desserts')">
+                    <div class="category-icon">🍰</div>
+                    <div class="category-name">Desserts</div>
+                    <div class="category-count" id="count-desserts">2</div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Notre Menu</h2>
+                <p class="section-subtitle">Plats traditionnels préparés avec des ingrédients frais</p>
+            </div>
+
+            <div class="menu-grid" id="menuGrid">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about-restaurant" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2 class="section-title">À propos du restaurant</h2>
+                    <p class="about-description">
+                        Saveurs du Cameroun est votre destination pour la cuisine traditionnelle camerounaise 
+                        authentique. Depuis 2018, nous préparons avec passion les plats que nos grand-mères 
+                        cuisinaient, en utilisant uniquement des ingrédients frais et de qualité.
+                    </p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">👨‍🍳</div>
+                            <div class="feature-content">
+                                <h4>Chefs Expérimentés</h4>
+                                <p>15+ années d'expérience</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🌿</div>
+                            <div class="feature-content">
+                                <h4>Ingrédients Frais</h4>
+                                <p>Marché local quotidien</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🏆</div>
+                            <div class="feature-content">
+                                <h4>Recettes Authentiques</h4>
+                                <p>Traditions préservées</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">⚡</div>
+                            <div class="feature-content">
+                                <h4>Service Rapide</h4>
+                                <p>Livraison 30 minutes</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="restaurant-info-grid">
+                        <div class="info-card">
+                            <h4>🕒 Horaires</h4>
+                            <p>10h00 - 22h00</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>📍 Localisation</h4>
+                            <p>Akwa, Douala</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>📞 Contact</h4>
+                            <p>+237 6XX XX XX</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>💳 Paiement</h4>
+                            <p>MoMo, Cash</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-visual">
+                    <div class="stats-showcase">
+                        <div class="stat-box-large">
+                            <div class="stat-icon-large">⭐</div>
+                            <div class="stat-value-large">4.8/5</div>
+                            <div class="stat-label-large">Note</div>
+                        </div>
+                        <div class="stat-box-large">
+                            <div class="stat-icon-large">📦</div>
+                            <div class="stat-value-large">2,847</div>
+                            <div class="stat-label-large">Commandes</div>
+                        </div>
+                        <div class="stat-box-large">
+                            <div class="stat-icon-large">👥</div>
+                            <div class="stat-value-large">1,523</div>
+                            <div class="stat-label-large">Clients</div>
+                        </div>
+                        <div class="stat-box-large">
+                            <div class="stat-icon-large">🏅</div>
+                            <div class="stat-value-large">98%</div>
+                            <div class="stat-label-large">Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery -->
+    <section class="delivery-section" id="delivery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Livraison via <span class="highlight">Aphric Express</span></h2>
+                <p class="section-subtitle">Suivi GPS temps réel et livraison 30 minutes garantie</p>
+            </div>
+
+            <div class="delivery-features-grid">
+                <div class="delivery-feature">
+                    <div class="feature-icon-large">⚡</div>
+                    <h3>Express</h3>
+                    <p>30min ou remboursement</p>
+                </div>
+                <div class="delivery-feature">
+                    <div class="feature-icon-large">📍</div>
+                    <h3>GPS Tracking</h3>
+                    <p>Suivi temps réel</p>
+                </div>
+                <div class="delivery-feature">
+                    <div class="feature-icon-large">🔒</div>
+                    <h3>Sécurisé</h3>
+                    <p>SSL encryption</p>
+                </div>
+                <div class="delivery-feature">
+                    <div class="feature-icon-large">🎁</div>
+                    <h3>Offres</h3>
+                    <p>Promos régulières</p>
+                </div>
+            </div>
+
+            <div class="delivery-zones">
+                <h3>Zones de livraison</h3>
+                <div class="zones-grid">
+                    <span class="zone-badge">Akwa</span>
+                    <span class="zone-badge">Bonanjo</span>
+                    <span class="zone-badge">Bonapriso</span>
+                    <span class="zone-badge">Deido</span>
+                    <span class="zone-badge">Bali</span>
+                    <span class="zone-badge">New Bell</span>
+                    <span class="zone-badge">Makepe</span>
+                    <span class="zone-badge">Logbaba</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews-section" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Avis <span class="highlight">Clients</span></h2>
+                <p class="section-subtitle">Ce que nos clients disent</p>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">MC</div>
+                            <div class="reviewer-details">
+                                <h4>Marie Claire</h4>
+                                <p>Akwa, Douala</p>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-value">5.0</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Le meilleur Ndolé de Douala! Livraison rapide via Aphric Express. Je commande 3 fois par semaine.
+                    </p>
+                    <div class="review-footer">
+                        <span class="review-date">Il y a 2 jours</span>
+                        <span class="verified-badge">✓ Vérifié</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">PT</div>
+                            <div class="reviewer-details">
+                                <h4>Patrick Tchoua</h4>
+                                <p>Bonapriso</p>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-value">5.0</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Service impeccable! Le GPS tracking est pratique. Mes enfants adorent le Poulet DG.
+                    </p>
+                    <div class="review-footer">
+                        <span class="review-date">Il y a 5 jours</span>
+                        <span class="verified-badge">✓ Vérifié</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">GF</div>
+                            <div class="reviewer-details">
+                                <h4>Grace Fon</h4>
+                                <p>Bonanjo</p>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-value">5.0</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Authentique et délicieux! Portions généreuses et prix corrects. Hautement recommandé!
+                    </p>
+                    <div class="review-footer">
+                        <span class="review-date">Il y a 1 semaine</span>
+                        <span class="verified-badge">✓ Vérifié</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prêt à commander?</h2>
+                <p>Rejoignez les milliers qui savourent nos plats traditionnels</p>
+                <div class="cta-actions">
+                    <button class="btn-cta-primary" onclick="scrollToMenu()">Commander maintenant</button>
+                    <button class="btn-cta-secondary" onclick="showInfo()">En savoir plus</button>
+                </div>
+            </div>
+            <div class="cta-visual">
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-value">4.8★</div>
+                        <div class="stat-label">Rating</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">30min</div>
+                        <div class="stat-label">Livraison</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">2,847</div>
+                        <div class="stat-label">Commandes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <div class="logo-wrapper">
+                            <div class="logo-icon">🚚</div>
+                            <div class="logo-text">
+                                <span class="logo-main">APHRIC</span>
+                                <span class="logo-sub">EXPRESS</span>
+                            </div>
+                        </div>
+                        <p>Marketplace moderne avec GPS tracking 24/7.</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Restaurant</h4>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#about">À Propos</a></li>
+                        <li><a href="#delivery">Livraison</a></li>
+                        <li><a href="#reviews">Avis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Aphric</h4>
+                    <ul>
+                        <li><a href="#">Marketplace</a></li>
+                        <li><a href="#">GPS Tracking</a></li>
+                        <li><a href="#">Livreurs</a></li>
+                        <li><a href="#">Vendeurs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>📞 +237 679424328</li>
+                        <li>📧 saveurs@aphric.cm</li>
+                        <li>🕒 10h - 22h</li>
+                        <li>📍 Akwa, Douala</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aphric Express. Saveurs du Cameroun - Vendeur vérifié.</p>
+                <div class="footer-links">
+                    <a href="#">Confidentialité</a>
+                    <a href="#">Conditions</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Votre Panier</h3>
+            <button class="close-cart" onclick="closeCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <span class="empty-icon">🛒</span>
+                <p>Votre panier est vide</p>
+                <button class="browse-btn" onclick="closeCart(); scrollToMenu();">Parcourir le menu</button>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Sous-total:</span>
+                    <span id="cartSubtotal">0 FCFA</span>
+                </div>
+                <div class="summary-row">
+                    <span>Livraison:</span>
+                    <span id="deliveryFee">500 FCFA</span>
+                </div>
+                <div class="summary-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">500 FCFA</span>
+                </div>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">
+                Commander via Aphric Express
+            </button>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+    <script src="restaurant-aphric.js"></script>
+</body>
+</html>
